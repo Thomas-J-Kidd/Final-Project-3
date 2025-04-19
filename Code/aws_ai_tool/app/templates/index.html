@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+
+{% block title %}Job Management - AWS AI Tool{% endblock %}
+
+{% block content %}
+<h1>Job Management</h1>
+
+<!-- Configuration Section -->
+<h2>Launch New Training Job</h2>
+<form method="POST" action="{{ url_for('main.launch_job') }}" enctype="multipart/form-data">
+    {# Add CSRF token later if using Flask-WTF #}
+    {# {{ form.csrf_token }} #}
+
+    <div>
+        <label for="experiment_name">Experiment Name:</label><br>
+        <input type="text" id="experiment_name" name="experiment_name" required size="50">
+    </div>
+    <br>
+    <div>
+        <label for="model_script">Select Model Script:</label><br>
+        <select id="model_script" name="model_script" required>
+            <option value="">-- Select Model --</option>
+            {% if available_models %}
+                {% for model_file in available_models %}
+                    <option value="{{ model_file }}">{{ model_file }}</option>
+                {% endfor %}
+            {% else %}
+                <option value="" disabled>-- No models uploaded --</option>
+            {% endif %}
+        </select>
+        {# Link to Model Management page #}
+        (<a href="{{ url_for('main.model_management') }}">Manage Models</a>)
+    </div>
+    <br>
+    <div>
+        <label for="hyperparameters">Hyperparameters (e.g., JSON or key=value pairs):</label><br>
+        <textarea id="hyperparameters" name="hyperparameters" rows="4" cols="50">{"learning_rate": 0.001, "epochs": 10}</textarea>
+    </div>
+    <br>
+    <div>
+        <label for="data_source">Local Data Directory/File:</label><br>
+        {# Using text input for now; file/directory selection via browser is complex.
+           User might need to specify a path accessible by the server.
+           Alternatively, implement file upload for data. #}
+        <input type="text" id="data_source" name="data_source" size="50" placeholder="Path on server or description">
+        {# Or <input type="file" id="data_file" name="data_file" webkitdirectory directory multiple> #}
+    </div>
+    <br>
+    <div>
+        <label for="instance_type">AWS EC2 Instance Type:</label><br>
+        <select id="instance_type" name="instance_type" required>
+            {# Common instance types, make configurable later #}
+            <option value="t2.micro">t2.micro (General Purpose - Free Tier Eligible)</option>
+            <option value="g4dn.xlarge">g4dn.xlarge (GPU - NVIDIA T4)</option>
+            <option value="p3.2xlarge">p3.2xlarge (GPU - NVIDIA V100)</option>
+            {# Add more relevant types #}
+        </select>
+    </div>
+    <br>
+    <div>
+        <button type="submit">Launch Training Job</button>
+    </div>
+</form>
+
+<!-- Monitoring Section -->
+<h2>Active/Recent Training Jobs</h2>
+<table border="1" style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Experiment Name</th>
+            <th>Model</th>
+            <th>Status</th>
+            <th>Instance ID</th>
+            <th>Start Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="active-jobs-table"> {# Added ID #}
+        {% if active_jobs %}
+            {% for job in active_jobs %}
+            <tr data-job-id="{{ job.experiment_id }}"> {# Added data-job-id attribute #}
+                <td>{{ job.name }}</td>
+                <td>{{ job.model_script }}</td>
+                <td class="status-cell">{{ job.status }}</td> {# Added status-cell class #}
+                <td>{{ job.aws_instance_id if job.aws_instance_id else 'N/A' }}</td> {# Handle None #}
+                <td>{{ job.start_time.strftime('%Y-%m-%d %H:%M:%S') if job.start_time else 'N/A' }}</td> {# Format time #}
+                <td>
+                    <a href="{{ url_for('main.view_logs', job_id=job.experiment_id) }}">View Logs</a>
+                    <button class="check-status-btn" data-job-id="{{ job.experiment_id }}" style="margin-left: 10px;">Check Status</button>
+                    {# Add terminate button later #}
+                    {# <form method="POST" action="{{ url_for('main.terminate_job', job_id=job.experiment_id) }}" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Are you sure you want to terminate this job?');">Terminate</button>
+                    </form> #}
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="6">No active jobs found.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<!-- Add a container for live logs -->
+<div id="live-logs-container" style="display: none; margin-top: 20px;">
+    <h3>Live Training Logs</h3>
+    <div id="live-logs-job-info"></div>
+    <pre id="live-logs" style="max-height: 300px; overflow-y: auto; background-color: #f5f5f5; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; white-space: pre-wrap;"></pre>
+</div>
+
+
+<!-- Results Section -->
+<h2>Completed Experiments <button id="refresh-completed-btn" style="margin-left: 10px; font-size: 0.8em;">Refresh</button></h2>
+<table border="1" style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Experiment Name</th>
+            <th>Model</th>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Status</th>
+            <th>Details</th>
+            <th>Key Metrics</th> {# e.g., Final Loss, Best PSNR #}
+            <th>Results Path</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if completed_experiments %}
+            {% for exp in completed_experiments %}
+            <tr>
+                <td>{{ exp.name }}</td>
+                <td>{{ exp.model_script }}</td>
+                <td>{{ exp.end_time.strftime('%Y-%m-%d %H:%M:%S') if exp.end_time else 'N/A' }}</td>
+                <td>{# Calculate duration later #}</td>
+                <td>{{ exp.status }}</td>
+                <td>
+                    {% if exp.status == 'Failed' and exp.error_message %}
+                        <div class="error-tooltip">
+                            <span class="error-icon">⚠️</span>
+                            <span class="error-tooltip-text">{{ exp.error_message }}</span>
+                        </div>
+                    {% elif exp.status == 'Completed' %}
+                        <span class="success-icon">✓</span>
+                    {% endif %}
+                </td>
+                <td>{# Fetch and display key metrics later #}</td>
+                <td>{{ exp.results_path }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="8">No completed experiments found.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<style>
+    /* Tooltip styles for error messages */
+    .error-tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .error-icon {
+        color: #d9534f;
+        font-weight: bold;
+    }
+    
+    .success-icon {
+        color: #5cb85c;
+        font-weight: bold;
+    }
+    
+    .error-tooltip .error-tooltip-text {
+        visibility: hidden;
+        width: 300px;
+        background-color: #f8d7da;
+        color: #721c24;
+        text-align: left;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -150px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        white-space: pre-line;
+        border: 1px solid #f5c6cb;
+        font-size: 0.9em;
+    }
+    
+    .error-tooltip:hover .error-tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const activeJobRows = document.querySelectorAll('#active-jobs-table tbody tr[data-job-id]');
+        const activeJobIds = Array.from(activeJobRows).map(row => row.getAttribute('data-job-id'));
+        let pollingInterval;
+        
+        // Elements for live logs display
+        const liveLogsContainer = document.getElementById('live-logs-container');
+        const liveLogsJobInfo = document.getElementById('live-logs-job-info');
+        const liveLogsElement = document.getElementById('live-logs');
+        let currentlyViewingJobId = null;
+
+        // Function to show live logs for a specific job
+        function showLiveLogs(jobId, jobName) {
+            currentlyViewingJobId = jobId;
+            liveLogsJobInfo.textContent = `Job ID: ${jobId} - ${jobName}`;
+            liveLogsContainer.style.display = 'block';
+            // Scroll to the logs container
+            liveLogsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add click event listeners to job rows to show live logs
+        activeJobRows.forEach(row => {
+            const jobId = row.getAttribute('data-job-id');
+            const jobName = row.querySelector('td:first-child').textContent;
+            
+            // Add a "View Live Logs" button to each active job row
+            const actionsCell = row.querySelector('td:last-child');
+            const liveLogsButton = document.createElement('button');
+            liveLogsButton.textContent = 'View Live Logs';
+            liveLogsButton.className = 'live-logs-btn';
+            liveLogsButton.style.marginLeft = '10px';
+            liveLogsButton.onclick = function(e) {
+                e.preventDefault();
+                showLiveLogs(jobId, jobName);
+            };
+            actionsCell.appendChild(liveLogsButton);
+        });
+        
+        // Use event delegation for "Check Status" buttons
+        const activeJobsTableBody = document.getElementById('active-jobs-table');
+        if (activeJobsTableBody) {
+            console.log("Setting up event delegation for 'Check Status' buttons on table body...");
+            activeJobsTableBody.addEventListener('click', function(e) {
+                // Check if the clicked element is a button with the correct class
+                if (e.target && e.target.classList.contains('check-status-btn')) {
+                    e.preventDefault();
+                    const button = e.target;
+                    console.log("'Check Status' button clicked via delegation!"); 
+                    const jobId = button.getAttribute('data-job-id');
+                    console.log("Job ID:", jobId); 
+                    
+                    // Find the status cell within the same row as the button
+                    const row = button.closest('tr'); // Find the parent table row
+                    const statusCell = row ? row.querySelector('td.status-cell') : null;
+                    console.log("Status cell found:", statusCell); 
+                    
+                    if (statusCell) {
+                        // Show checking indicator
+                        const currentText = statusCell.textContent.replace(' (Checking...)', '').replace(' (Error)', '');
+                        console.log("Current status text:", currentText);
+                        statusCell.textContent = currentText + ' (Checking...)';
+                        
+                        // Manually check status
+                        fetch(`/check_status/${jobId}`)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`HTTP error! status: ${response.status}`);
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                statusCell.textContent = data.status;
+                                
+                                // If job is completed or failed, refresh the page
+                                if (data.status === 'Completed' || data.status === 'Failed') {
+                                    alert(`Job ${jobId} is ${data.status}. The page will refresh to update the tables.`);
+                                    setTimeout(() => {
+                                        location.reload();
+                                    }, 2000); // Refresh after 2 seconds
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error checking status for job', jobId, ':', error);
+                                statusCell.textContent = currentText + ' (Error)';
+                                alert(`Error checking status: ${error.message}`);
+                            });
+                    } else {
+                         console.error("Could not find status cell in the same row as the button.");
+                    }
+                }
+            });
+        } else {
+             console.error("Could not find active jobs table body element (#active-jobs-table).");
+        }
+
+        // Original checkJobStatuses function for polling
+        function checkJobStatuses() {
+            if (activeJobIds.length === 0) {
+                if (pollingInterval) clearInterval(pollingInterval);
+                console.log("No active jobs left to poll.");
+                // Hide live logs container if no active jobs
+                if (liveLogsContainer.style.display !== 'none') {
+                    liveLogsContainer.style.display = 'none';
+                }
+                return; // No active jobs to check
+            }
+
+            activeJobIds.forEach((jobId, index) => {
+                const statusCell = document.querySelector(`#active-jobs-table tbody tr[data-job-id="${jobId}"] td.status-cell`);
+                if (!statusCell) return; // Row might have disappeared if manually refreshed
+
+                // Add a visual indicator that status is being checked only if not already present
+                let currentText = statusCell.textContent.replace(' (Checking...)', '').replace(' (Error)', '');
+                if (!statusCell.textContent.includes('Checking...')) {
+                     statusCell.textContent = currentText + ' (Checking...)';
+                }
+
+                fetch(`/check_status/${jobId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (statusCell) { // Check again if row still exists
+                            statusCell.textContent = data.status; // Update status text
+                            
+                            // Update live logs if this is the job we're currently viewing
+                            if (currentlyViewingJobId === jobId && data.latest_log_lines) {
+                                liveLogsElement.textContent = data.latest_log_lines;
+                                // Auto-scroll to the bottom of the logs
+                                liveLogsElement.scrollTop = liveLogsElement.scrollHeight;
+                            }
+                            
+                            // If job is completed or failed, remove it from polling list
+                            if (data.status === 'Completed' || data.status === 'Failed') {
+                                console.log(`Job ${jobId} finished with status: ${data.status}. Stopping polling for this job.`);
+                                // Find the index accurately in case array was modified during async operations
+                                const currentIndex = activeJobIds.indexOf(jobId);
+                                if (currentIndex > -1) {
+                                    activeJobIds.splice(currentIndex, 1);
+                                }
+                                
+                                // Hide the "View Live Logs" button for completed/failed jobs
+                                const row = document.querySelector(`#active-jobs-table tbody tr[data-job-id="${jobId}"]`);
+                                if (row) {
+                                    const liveLogsBtn = row.querySelector('.live-logs-btn');
+                                    if (liveLogsBtn) {
+                                        liveLogsBtn.style.display = 'none';
+                                    }
+                                    row.style.opacity = '0.6'; // Fade out completed/failed jobs
+                                }
+                                
+                                // If this was the job we were viewing logs for, hide the logs container
+                                if (currentlyViewingJobId === jobId) {
+                                    // Add a message that the job has completed/failed
+                                    liveLogsElement.textContent += `\n\n--- Job ${data.status} ---`;
+                                    // Don't hide the container immediately so the user can see the final logs
+                                    setTimeout(() => {
+                                        if (currentlyViewingJobId === jobId) { // Check again in case user switched to another job
+                                            liveLogsContainer.style.display = 'none';
+                                            currentlyViewingJobId = null;
+                                        }
+                                    }, 5000); // Hide after 5 seconds
+                                }
+                                
+                                // Refresh the page to update the completed experiments table
+                                // Always refresh when a job completes, regardless of other active jobs
+                                setTimeout(() => {
+                                    location.reload();
+                                }, 5000); // Refresh after 5 seconds
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking status for job', jobId, ':', error);
+                        if (statusCell) {
+                            // Remove checking indicator on error, keep last known status
+                             statusCell.textContent = currentText + ' (Error)';
+                        }
+                        // Optionally remove from polling on persistent errors
+                        // const currentIndex = activeJobIds.indexOf(jobId);
+                        // if (currentIndex > -1) {
+                        //     activeJobIds.splice(currentIndex, 1);
+                        // }
+                    });
+            });
+        }
+
+        if (activeJobIds.length > 0) {
+            console.log("Starting status polling for jobs:", activeJobIds);
+            // Check immediately and then set interval
+            checkJobStatuses();
+            pollingInterval = setInterval(checkJobStatuses, 5000); // Poll every 5 seconds for more responsive updates
+        } else {
+            console.log("No active jobs found on initial load.");
+        }
+
+        // Optional: Clear interval if user navigates away
+        window.addEventListener('beforeunload', () => {
+            if (pollingInterval) clearInterval(pollingInterval);
+        });
+
+        // Add event listener for the "Refresh" button
+        const refreshCompletedBtn = document.getElementById('refresh-completed-btn');
+        if (refreshCompletedBtn) {
+            refreshCompletedBtn.addEventListener('click', function() {
+                location.reload();
+            });
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Model Management - AWS AI Tool{% endblock %}
+
+{% block content %}
+<h1>Model Management</h1>
+
+<h2>Upload New Model Script</h2>
+<form method="POST" action="{{ url_for('main.upload_model') }}" enctype="multipart/form-data">
+    {# Add CSRF token later if using Flask-WTF #}
+    <div>
+        <label for="model_file">Select Python Script (.py):</label><br>
+        <input type="file" id="model_file" name="model_file" accept=".py" required>
+    </div>
+    <br>
+    {# Add fields for script description or parameter definition hints if needed #}
+    <div>
+        <button type="submit">Upload Script</button>
+    </div>
+</form>
+
+<h2>Available Model Scripts</h2>
+<table border="1" style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Upload Date</th> {# Or other metadata #}
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if models %}
+            {% for model in models %}
+            <tr>
+                <td>{{ model.filename }}</td>
+                <td>{{ model.upload_date }}</td>
+                <td>
+                    {# Add delete button later #}
+                    {# <form method="POST" action="{{ url_for('main.delete_model', model_id=model.id) }}" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this model script?');">Delete</button>
+                    </form> #}
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">No model scripts uploaded yet.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

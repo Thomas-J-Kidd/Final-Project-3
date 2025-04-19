@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}AWS AI Training Tool{% endblock %}</title>
+    <!-- Simple CSS for basic styling and tabs -->
+    <style>
+        body { font-family: sans-serif; margin: 0; }
+        .navbar { background-color: #f0f0f0; border-bottom: 1px solid #ccc; padding: 0; }
+        .nav-tabs { list-style: none; margin: 0; padding: 0; display: flex; }
+        .nav-tabs li { margin: 0; }
+        .nav-tabs li a { display: block; padding: 10px 15px; text-decoration: none; color: #333; border-right: 1px solid #ccc; }
+        .nav-tabs li a:hover { background-color: #e0e0e0; }
+        .nav-tabs li.active a { background-color: #ddd; font-weight: bold; }
+        .content { padding: 20px; }
+        h1, h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
+    </style>
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-tabs">
+            <!-- Use request.endpoint to determine the active tab -->
+            <li class="{{ 'active' if request.endpoint == 'main.index' else '' }}"><a href="{{ url_for('main.index') }}">Job Management</a></li>
+            <li class="{{ 'active' if request.endpoint == 'main.model_management' else '' }}"><a href="{{ url_for('main.model_management') }}">Model Management</a></li>
+            <li class="{{ 'active' if request.endpoint == 'main.inference' else '' }}"><a href="{{ url_for('main.inference') }}">Inference & Comparison</a></li>
+            <li class="{{ 'active' if request.endpoint == 'main.settings' else '' }}"><a href="{{ url_for('main.settings') }}">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

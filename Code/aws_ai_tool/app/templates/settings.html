@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - AWS AI Tool{% endblock %}
+
+{% block content %}
+<h1>Settings</h1>
+
+<form method="POST" action="{{ url_for('main.save_settings') }}">
+    {# Add CSRF token later #}
+    <h2>SSH Connection Settings (for existing EC2 instance)</h2>
+    <div>
+        <label for="ssh_hostname">EC2 Instance IP Address or DNS:</label><br>
+        <input type="text" id="ssh_hostname" name="ssh_hostname" value="{{ settings.get('SSH_HOSTNAME', '') }}" placeholder="e.g., 54.123.45.67 or ec2-..." required size="50">
+    </div>
+    <br>
+    <div>
+        <label for="ssh_username">SSH Username:</label><br>
+        <input type="text" id="ssh_username" name="ssh_username" value="{{ settings.get('SSH_USERNAME', 'ubuntu') }}" placeholder="e.g., ubuntu, ec2-user" required size="30">
+    </div>
+    <br>
+    <div>
+        <label for="ssh_key_path">Path to Private SSH Key (.pem):</label><br>
+        <input type="text" id="ssh_key_path" name="ssh_key_path" value="{{ settings.get('SSH_KEY_PATH', '~/.ssh/id_rsa') }}" placeholder="e.g., /home/user/.ssh/my-key.pem" required size="50">
+        <small>(Full path on the server running this tool)</small>
+    </div>
+
+    <h2>Application Paths</h2>
+    <div>
+        <label for="upload_folder">Model Upload Folder:</label><br>
+        <input type="text" id="upload_folder" name="upload_folder" value="{{ settings.get('upload_folder', 'uploads') }}" size="50">
+    </div>
+    <br>
+    <div>
+        <label for="results_folder">Job Results Folder:</label><br>
+        <input type="text" id="results_folder" name="results_folder" value="{{ settings.get('results_folder', 'results') }}" size="50">
+    </div>
+    <br>
+    <div>
+        <label for="database_path">Database Path:</label><br>
+        <input type="text" id="database_path" name="database_path" value="{{ settings.get('database_path', 'experiments.db') }}" size="50">
+    </div>
+
+    <br>
+    <div>
+        <button type="submit">Save Settings</button>
+    </div>
+</form>
+
+{% endblock %}

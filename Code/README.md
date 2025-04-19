@@ -4,37 +4,48 @@ This directory contains all the code for the Deep Learning final project.
 
 ## Code Structure
 
-(This section will be updated as code is developed)
+- **aws_ai_tool/**: Web-based application for training and running inference on AI models using remote AWS EC2 instances
 
-## Execution Order
+## Project Components
 
-1. Data Collection: (scripts to be added)
-2. Data Preprocessing: (scripts to be added)
-3. Model Training: (scripts to be added)
-4. Evaluation: (scripts to be added)
-5. Visualization: (scripts to be added)
+### AWS AI Training & Inference Tool
 
-## Script Descriptions
+The `aws_ai_tool` directory contains a complete web application for training deep learning models on AWS EC2 instances and performing inference with those models. This tool simplifies the process of training models for thermal image denoising and super-resolution.
 
-### Data Collection
-- (To be added)
+#### Key Features
 
-### Data Preprocessing
-- (To be added)
+- Remote training on AWS EC2 instances with GPU acceleration
+- Model management and experiment tracking
+- Real-time log monitoring
+- Automatic results download
+- Inference with trained models
+- Web-based user interface
 
-### Model Training
-- (To be added)
+#### Getting Started
 
-### Evaluation
-- (To be added)
+To use the AWS AI tool:
 
-### Visualization
-- (To be added)
+1. Navigate to the `aws_ai_tool` directory
+2. Follow the installation and setup instructions in the [AWS AI Tool README](aws_ai_tool/README.md)
 
 ## Environment Setup
 
-(Instructions for setting up the required environment will be added here)
+### AWS AI Tool Requirements
 
-## Dependencies
+- Python 3.7+
+- Flask
+- PyTorch
+- Paramiko (for SSH operations)
+- Boto3 (for AWS operations)
+- Pillow and OpenCV (for image processing)
 
-(List of dependencies will be added here)
+For a complete list of dependencies, see the [requirements.txt](aws_ai_tool/requirements.txt) file.
+
+## Usage
+
+### AWS AI Tool
+
+1. Install dependencies: `pip install -r aws_ai_tool/requirements.txt`
+2. Initialize the database: `python aws_ai_tool/alter_db.py`
+3. Start the application: `python aws_ai_tool/run.py`
+4. Access the web interface at http://localhost:5000

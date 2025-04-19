@@ -1,0 +1,84 @@
+Starting SRCNN training script...
+Arguments: Namespace(data_dir='/home/ubuntu/dataset/thermal', output_dir='/home/ubuntu/ai_tool_experiments/12_test11/output', epochs=10, lr=0.001, batch_size=16, fail=False)
+Output directory: /home/ubuntu/ai_tool_experiments/12_test11/output
+Using device: cuda
+Loading training dataset...
+Found 700 matching image pairs.
+Loading validation dataset...
+Found 200 matching image pairs.
+Data loaders created.
+SRCNN model initialized.
+Using loss function: L1Loss
+Using optimizer: Adam with lr=0.001
+Starting training on device: cuda
+Target HR image size: torch.Size([448, 640])
+Epoch [1/10], Batch [10/44], Loss: 0.0867
+Epoch [1/10], Batch [20/44], Loss: 0.0590
+Epoch [1/10], Batch [30/44], Loss: 0.0420
+Epoch [1/10], Batch [40/44], Loss: 0.0417
+Epoch 1/10 completed. Average Loss: 0.0898. Time: 6.16s
+Validation PSNR: 23.51 dB. Time: 0.69s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 23.51 dB
+Epoch [2/10], Batch [10/44], Loss: 0.0370
+Epoch [2/10], Batch [20/44], Loss: 0.0353
+Epoch [2/10], Batch [30/44], Loss: 0.0337
+Epoch [2/10], Batch [40/44], Loss: 0.0350
+Epoch 2/10 completed. Average Loss: 0.0340. Time: 4.39s
+Validation PSNR: 24.07 dB. Time: 0.64s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.07 dB
+Epoch [3/10], Batch [10/44], Loss: 0.0302
+Epoch [3/10], Batch [20/44], Loss: 0.0293
+Epoch [3/10], Batch [30/44], Loss: 0.0358
+Epoch [3/10], Batch [40/44], Loss: 0.0307
+Epoch 3/10 completed. Average Loss: 0.0324. Time: 4.37s
+Validation PSNR: 24.28 dB. Time: 0.64s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.28 dB
+Epoch [4/10], Batch [10/44], Loss: 0.0289
+Epoch [4/10], Batch [20/44], Loss: 0.0297
+Epoch [4/10], Batch [30/44], Loss: 0.0301
+Epoch [4/10], Batch [40/44], Loss: 0.0304
+Epoch 4/10 completed. Average Loss: 0.0321. Time: 4.40s
+Validation PSNR: 24.36 dB. Time: 0.64s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.36 dB
+Epoch [5/10], Batch [10/44], Loss: 0.0280
+Epoch [5/10], Batch [20/44], Loss: 0.0362
+Epoch [5/10], Batch [30/44], Loss: 0.0291
+Epoch [5/10], Batch [40/44], Loss: 0.0339
+Epoch 5/10 completed. Average Loss: 0.0313. Time: 4.38s
+Validation PSNR: 24.39 dB. Time: 0.65s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.39 dB
+Epoch [6/10], Batch [10/44], Loss: 0.0334
+Epoch [6/10], Batch [20/44], Loss: 0.0303
+Epoch [6/10], Batch [30/44], Loss: 0.0331
+Epoch [6/10], Batch [40/44], Loss: 0.0375
+Epoch 6/10 completed. Average Loss: 0.0318. Time: 4.40s
+Validation PSNR: 24.37 dB. Time: 0.63s
+Epoch [7/10], Batch [10/44], Loss: 0.0346
+Epoch [7/10], Batch [20/44], Loss: 0.0367
+Epoch [7/10], Batch [30/44], Loss: 0.0288
+Epoch [7/10], Batch [40/44], Loss: 0.0296
+Epoch 7/10 completed. Average Loss: 0.0324. Time: 4.39s
+Validation PSNR: 24.46 dB. Time: 0.65s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.46 dB
+Epoch [8/10], Batch [10/44], Loss: 0.0354
+Epoch [8/10], Batch [20/44], Loss: 0.0319
+Epoch [8/10], Batch [30/44], Loss: 0.0328
+Epoch [8/10], Batch [40/44], Loss: 0.0300
+Epoch 8/10 completed. Average Loss: 0.0307. Time: 4.45s
+Validation PSNR: 24.43 dB. Time: 0.66s
+Epoch [9/10], Batch [10/44], Loss: 0.0292
+Epoch [9/10], Batch [20/44], Loss: 0.0313
+Epoch [9/10], Batch [30/44], Loss: 0.0304
+Epoch [9/10], Batch [40/44], Loss: 0.0336
+Epoch 9/10 completed. Average Loss: 0.0310. Time: 4.42s
+Validation PSNR: 24.49 dB. Time: 0.64s
+New best model saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_best.pth with PSNR: 24.49 dB
+Epoch [10/10], Batch [10/44], Loss: 0.0294
+Epoch [10/10], Batch [20/44], Loss: 0.0299
+Epoch [10/10], Batch [30/44], Loss: 0.0270
+Epoch [10/10], Batch [40/44], Loss: 0.0305
+Epoch 10/10 completed. Average Loss: 0.0306. Time: 4.40s
+Validation PSNR: 24.47 dB. Time: 0.65s
+Training finished. Best validation PSNR: 24.49 dB
+Final model state saved to /home/ubuntu/ai_tool_experiments/12_test11/output/srcnn_final.pth
+Success marker created at /home/ubuntu/ai_tool_experiments/12_test11/output/_SUCCESS

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Inference & Comparison - AWS AI Tool{% endblock %}
+
+{% block head_extra %}
+<style>
+    .comparison-area {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        overflow-x: auto; /* Allow horizontal scrolling if many images */
+    }
+    .image-container {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+    }
+    .image-container img {
+        max-width: 400px; /* Limit initial display size */
+        max-height: 400px;
+        display: block;
+        margin-bottom: 5px;
+        /* Styles for zoom/pan will be added via JS */
+        cursor: grab;
+    }
+    .image-container p {
+        margin: 5px 0;
+        font-size: 0.9em;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Inference & Comparison</h1>
+
+<form method="POST" action="{{ url_for('main.run_inference') }}" enctype="multipart/form-data">
+    {# Add CSRF token later #}
+    <div>
+        <label for="image_file">Upload Thermal Image:</label><br>
+        <input type="file" id="image_file" name="image_file" accept="image/*" required>
+    </div>
+    <br>
+    <div>
+        <label for="trained_model_id">Select Trained Model(s):</label><br>
+        <select id="trained_model_id" name="trained_model_id" required multiple size="5">
+            {# Populate this list from completed experiments later #}
+            {% for model_exp in trained_models %}
+                <option value="{{ model_exp.experiment_id }}">{{ model_exp.name }} ({{ model_exp.model_script }})</option>
+            {% else %}
+                <option value="" disabled>-- No trained models available --</option>
+            {% endfor %}
+        </select>
+        <small>(Hold Ctrl/Cmd to select multiple)</small>
+    </div>
+    <br>
+    <div>
+        <button type="submit">Run Inference</button>
+    </div>
+</form>
+
+<h2>Comparison Results</h2>
+<div class="comparison-area" id="comparison-area">
+    {# Results will be loaded here dynamically via JS or page reload #}
+    {% if inference_results %}
+        {% for result in inference_results %}
+            <div class="image-container" id="result-{{ loop.index0 }}"> {# Use loop index for unique ID #}
+                {% if result.url %}
+                    <img src="{{ result.url }}" alt="{{ result.name }}">
+                {% else %}
+                    <p>(Image not available)</p>
+                {% endif %}
+                <p><strong>{{ result.name }}</strong></p>
+                {% if result.psnr is defined %}
+                    <p>PSNR: {{ "%.2f"|format(result.psnr) }} dB</p>
+                {% endif %}
+                 {% if result.ssim is defined %}
+                    <p>SSIM: {{ "%.4f"|format(result.ssim) }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Upload an image and select model(s) to run inference.</p>
+    {% endif %}
+    {# Example structure for results (to be generated dynamically)
+    <div class="image-container" id="original-image">
+        <img src="{{ url_for('static', filename='path/to/original.png') }}" alt="Original Image">
+        <p><strong>Original</strong></p>
+    </div>
+    <div class="image-container" id="result-model-1">
+        <img src="{{ url_for('static', filename='path/to/denoised_1.png') }}" alt="Denoised Model 1">
+        <p><strong>Model: Model 1 Name</strong></p>
+        <p>PSNR: XX.XX dB</p>
+        <p>SSIM: 0.XXXX</p>
+    </div>
+    <div class="image-container" id="result-model-2">
+        <img src="{{ url_for('static', filename='path/to/denoised_2.png') }}" alt="Denoised Model 2">
+        <p><strong>Model: Model 2 Name</strong></p>
+        <p>PSNR: YY.YY dB</p>
+        <p>SSIM: 0.YYYY</p>
+    </div>
+    #}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{# Add JavaScript for synchronized zoom/pan later #}
+<script>
+    console.log("Inference page loaded.");
+    // Placeholder for zoom/pan synchronization logic
+    function initSyncZoomPan() {
+        const container = document.getElementById('comparison-area');
+        // Find all image elements within the container
+        // Add event listeners for mousedown, mousemove, mouseup, wheel
+        // Calculate transformations (scale, translate)
+        // Apply transformations synchronously to all images
+        console.log("Sync zoom/pan initialization placeholder.");
+    }
+    // Call init function if results are present (or after dynamic loading)
+    // initSyncZoomPan();
+</script>
+{% endblock %}

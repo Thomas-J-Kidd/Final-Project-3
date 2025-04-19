@@ -1,0 +1,10 @@
+Flask>=2.0
+boto3>=1.20
+paramiko>=2.7
+scp>=0.14 # Added for SCPClient used in ssh_ops.py
+Pillow>=9.0
+opencv-python>=4.5
+numpy>=1.20
+torch>=1.10 # Assuming PyTorch is needed for local inference/model handling
+# Add torchvision if needed for specific models/transforms
+torchvision>=0.11 # Uncommented as it's needed for transforms
