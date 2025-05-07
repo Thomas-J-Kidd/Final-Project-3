@@ -1,0 +1,64 @@
+# model
+IMAGE_SIZE : [256, 256]   # load image size, if it's train mode, it will be randomly cropped to IMAGE_SIZE. If it's test mode, it will be resized to IMAGE_SIZE.
+CHANNEL_X : 1             # input channel
+CHANNEL_Y : 1             # output channel
+TIMESTEPS : 100           # diffusion steps
+SCHEDULE : 'linear'       # linear or cosine
+MODEL_CHANNELS : 32       # basic channels of Unet
+NUM_RESBLOCKS : 1         # number of residual blocks
+CHANNEL_MULT : [1,2,3,4]  # channel multiplier of each layer
+NUM_HEADS : 1
+MIDDLE_BLOCKS : 1
+ENC_BLOCKS : [1,1,1,1]
+DEC_BLOCKS : [1,1,1,1]
+
+
+MODE : 0                 # 0 Test, 1 Train
+PRE_ORI : 'True'          # if True, predict $x_0$, else predict $/epsilon$.
+TASK: 'ThermalDenoising'
+
+# train
+PATH_GT : './thermal_noisy/train/GT'              # path of ground truth
+PATH_IMG : './thermal_noisy/train/Noisy'          # path of input
+BATCH_SIZE : 4          # training batch size
+NUM_WORKERS : 4           # number of workers
+ITERATION_MAX : 100000   # max training iteration
+LR : 0.0001               # learning rate
+LOSS : 'L1'               # L1 or L2
+EMA_EVERY : 100           # update EMA every EMA_EVERY iterations
+START_EMA : 2000          # start EMA after START_EMA iterations
+SAVE_MODEL_EVERY : 10000  # save model every SAVE_MODEL_EVERY iterations
+EMA: 'True'               # if True, use EMA
+CONTINUE_TRAINING : 'False'               # if True, continue training
+CONTINUE_TRAINING_STEPS : 10000          # continue training from CONTINUE_TRAINING_STEPS
+PRETRAINED_PATH_INITIAL_PREDICTOR : ''    # path of pretrained initial predictor
+PRETRAINED_PATH_DENOISER : ''           # path of pretrained denoiser
+WEIGHT_SAVE_PATH : './ThermalDenoising/weights'          # path to save model
+TRAINING_PATH : './ThermalDenoising/training'              # path of training data
+BETA_LOSS : 50            # hyperparameter to balance the pixel loss and the diffusion loss
+HIGH_LOW_FREQ : 'False'    # if True, training with frequency separation
+VALIDATE_EVERY : 1000
+VALIDATE_ITERATIONS: 1000
+WANDB: 'False'
+PROJECT: 'NAFDPM_ThermalDenoising'
+
+#TEST
+NATIVE_RESOLUTION : 'False'               # if True, test with native resolution
+DPM_SOLVER : 'True'      # if True, test with DPM_solver
+DPM_STEP : 10             # DPM_solver step
+BATCH_SIZE_VAL : 1        # test batch size
+TEST_PATH_GT : './thermal_noisy/val/GT'         # path of ground truth
+TEST_PATH_IMG : './thermal_noisy/val/Noisy'        # path of input
+TEST_INITIAL_PREDICTOR_WEIGHT_PATH : './ThermalDenoising/weights/BEST_PSNR_model_init.pth'   # path of initial predictor
+TEST_DENOISER_WEIGHT_PATH : './ThermalDenoising/weights/BEST_PSNR_model_denoiser.pth'            # path of denoiser
+TEST_IMG_SAVE_PATH : './ThermalDenoising/results'          # path to save results
+LOGGER_PATH : './ThermalDenoising/logs'
+
+#METRICS
+PSNR: 'True'
+SSIM: 'True'
+FMETRIC: 'False'
+PFMETRIC: 'False'
+DRD: 'False'
+LPIPS: 'True'
+DISTS: 'True'

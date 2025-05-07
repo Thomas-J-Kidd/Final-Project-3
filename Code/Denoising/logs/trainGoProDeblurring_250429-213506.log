@@ -1,0 +1,11 @@
+25-04-29 21:35:07.785 - INFO: Iteration: 0, Loss: 17.426235, Loss Init: 0.262837, Loss Denoiser: 0.343268
+25-04-29 21:35:35.722 - INFO: Iteration: 100, Loss: 3.749983, Loss Init: 0.064721, Loss Denoiser: 0.073705
+25-04-29 21:36:03.558 - INFO: Iteration: 200, Loss: 1.849888, Loss Init: 0.049000, Loss Denoiser: 0.036018
+25-04-29 21:36:30.315 - INFO: Iteration: 300, Loss: 1.188072, Loss Init: 0.030800, Loss Denoiser: 0.023145
+25-04-29 21:36:56.484 - INFO: Iteration: 400, Loss: 1.483698, Loss Init: 0.035640, Loss Denoiser: 0.028961
+25-04-29 21:37:22.775 - INFO: Iteration: 500, Loss: 1.667595, Loss Init: 0.038065, Loss Denoiser: 0.032591
+25-04-29 21:37:49.467 - INFO: Iteration: 600, Loss: 1.801086, Loss Init: 0.040249, Loss Denoiser: 0.035217
+25-04-29 21:38:15.950 - INFO: Iteration: 700, Loss: 1.599274, Loss Init: 0.034635, Loss Denoiser: 0.031293
+25-04-29 21:38:42.428 - INFO: Iteration: 800, Loss: 2.654348, Loss Init: 0.054647, Loss Denoiser: 0.051994
+25-04-29 21:39:09.087 - INFO: Iteration: 900, Loss: 1.340204, Loss Init: 0.031747, Loss Denoiser: 0.026169
+25-04-29 21:39:35.406 - INFO: Iteration: 1000, Loss: 1.319684, Loss Init: 0.030303, Loss Denoiser: 0.025788

@@ -1,0 +1,66 @@
+25-04-30 13:16:01.867 - INFO: Iteration: 0, Loss: 12.436520, Loss Init: 0.073483, Loss Denoiser: 0.247261
+25-04-30 13:16:24.532 - INFO: Iteration: 100, Loss: 2.046342, Loss Init: 0.041782, Loss Denoiser: 0.040091
+25-04-30 13:16:47.215 - INFO: Iteration: 200, Loss: 1.974008, Loss Init: 0.039576, Loss Denoiser: 0.038689
+25-04-30 13:17:09.902 - INFO: Iteration: 300, Loss: 1.079588, Loss Init: 0.023713, Loss Denoiser: 0.021118
+25-04-30 13:17:32.588 - INFO: Iteration: 400, Loss: 1.425359, Loss Init: 0.031352, Loss Denoiser: 0.027880
+25-04-30 13:17:55.352 - INFO: Iteration: 500, Loss: 1.947514, Loss Init: 0.039314, Loss Denoiser: 0.038164
+25-04-30 13:18:18.087 - INFO: Iteration: 600, Loss: 1.577974, Loss Init: 0.033445, Loss Denoiser: 0.030891
+25-04-30 13:18:40.635 - INFO: Iteration: 700, Loss: 1.791031, Loss Init: 0.035723, Loss Denoiser: 0.035106
+25-04-30 13:19:03.221 - INFO: Iteration: 800, Loss: 1.304322, Loss Init: 0.027889, Loss Denoiser: 0.025529
+25-04-30 13:19:25.801 - INFO: Iteration: 900, Loss: 0.789950, Loss Init: 0.020460, Loss Denoiser: 0.015390
+25-04-30 13:19:48.382 - INFO: Iteration: 1000, Loss: 2.064970, Loss Init: 0.042440, Loss Denoiser: 0.040451
+25-04-30 13:44:59.683 - INFO: ----Validation at iteration 1000: PSNR: 25.609827 dB; SSIM: 0.780083
+
+25-04-30 13:44:59.683 - INFO: ----Validation LPIPS	: 0.288286
+
+25-04-30 13:44:59.683 - INFO: ----Validation DISTS	: 0.208021
+
+25-04-30 13:45:22.592 - INFO: Iteration: 1100, Loss: 1.543511, Loss Init: 0.032731, Loss Denoiser: 0.030216
+25-04-30 13:45:45.177 - INFO: Iteration: 1200, Loss: 1.380220, Loss Init: 0.029612, Loss Denoiser: 0.027012
+25-04-30 13:46:07.761 - INFO: Iteration: 1300, Loss: 1.310311, Loss Init: 0.028514, Loss Denoiser: 0.025636
+25-04-30 13:46:30.346 - INFO: Iteration: 1400, Loss: 1.110463, Loss Init: 0.025342, Loss Denoiser: 0.021702
+25-04-30 13:46:52.935 - INFO: Iteration: 1500, Loss: 2.022629, Loss Init: 0.056162, Loss Denoiser: 0.039329
+25-04-30 13:47:15.737 - INFO: Iteration: 1600, Loss: 1.382437, Loss Init: 0.029910, Loss Denoiser: 0.027051
+25-04-30 13:47:38.363 - INFO: Iteration: 1700, Loss: 1.557256, Loss Init: 0.034434, Loss Denoiser: 0.030456
+25-04-30 13:48:00.947 - INFO: Iteration: 1800, Loss: 1.725457, Loss Init: 0.036793, Loss Denoiser: 0.033773
+25-04-30 13:48:23.536 - INFO: Iteration: 1900, Loss: 2.332766, Loss Init: 0.046844, Loss Denoiser: 0.045718
+25-04-30 13:48:46.121 - INFO: Iteration: 2000, Loss: 1.961832, Loss Init: 0.045214, Loss Denoiser: 0.038332
+25-04-30 14:13:57.193 - INFO: ----Validation at iteration 2000: PSNR: 25.808068 dB; SSIM: 0.778710
+
+25-04-30 14:13:57.193 - INFO: ----Validation LPIPS	: 0.285201
+
+25-04-30 14:13:57.194 - INFO: ----Validation DISTS	: 0.212148
+
+25-04-30 14:14:19.863 - INFO: Iteration: 2100, Loss: 1.463848, Loss Init: 0.029726, Loss Denoiser: 0.028682
+25-04-30 14:14:42.718 - INFO: Iteration: 2200, Loss: 1.249516, Loss Init: 0.026125, Loss Denoiser: 0.024468
+25-04-30 14:15:05.307 - INFO: Iteration: 2300, Loss: 1.189478, Loss Init: 0.026542, Loss Denoiser: 0.023259
+25-04-30 14:15:27.897 - INFO: Iteration: 2400, Loss: 1.715049, Loss Init: 0.035428, Loss Denoiser: 0.033592
+25-04-30 14:15:50.489 - INFO: Iteration: 2500, Loss: 1.149512, Loss Init: 0.024091, Loss Denoiser: 0.022508
+25-04-30 14:16:13.083 - INFO: Iteration: 2600, Loss: 1.600730, Loss Init: 0.033450, Loss Denoiser: 0.031346
+25-04-30 14:16:35.901 - INFO: Iteration: 2700, Loss: 0.963591, Loss Init: 0.020228, Loss Denoiser: 0.018867
+25-04-30 14:16:58.491 - INFO: Iteration: 2800, Loss: 1.454102, Loss Init: 0.030258, Loss Denoiser: 0.028477
+25-04-30 14:17:21.076 - INFO: Iteration: 2900, Loss: 1.437989, Loss Init: 0.029486, Loss Denoiser: 0.028170
+25-04-30 14:17:43.665 - INFO: Iteration: 3000, Loss: 1.147455, Loss Init: 0.028258, Loss Denoiser: 0.022384
+25-04-30 14:42:55.778 - INFO: ----Validation at iteration 3000: PSNR: 25.855999 dB; SSIM: 0.783684
+
+25-04-30 14:42:55.778 - INFO: ----Validation LPIPS	: 0.282882
+
+25-04-30 14:42:55.778 - INFO: ----Validation DISTS	: 0.204311
+
+25-04-30 14:43:18.440 - INFO: Iteration: 3100, Loss: 1.471837, Loss Init: 0.030266, Loss Denoiser: 0.028831
+25-04-30 14:43:41.302 - INFO: Iteration: 3200, Loss: 1.751594, Loss Init: 0.037202, Loss Denoiser: 0.034288
+25-04-30 14:44:03.891 - INFO: Iteration: 3300, Loss: 1.128056, Loss Init: 0.026859, Loss Denoiser: 0.022024
+25-04-30 14:44:26.480 - INFO: Iteration: 3400, Loss: 1.807861, Loss Init: 0.036511, Loss Denoiser: 0.035427
+25-04-30 14:44:49.112 - INFO: Iteration: 3500, Loss: 2.544338, Loss Init: 0.053271, Loss Denoiser: 0.049821
+25-04-30 14:45:11.704 - INFO: Iteration: 3600, Loss: 1.177034, Loss Init: 0.024252, Loss Denoiser: 0.023056
+25-04-30 14:45:34.491 - INFO: Iteration: 3700, Loss: 0.895366, Loss Init: 0.020522, Loss Denoiser: 0.017497
+25-04-30 14:45:57.080 - INFO: Iteration: 3800, Loss: 1.842189, Loss Init: 0.038798, Loss Denoiser: 0.036068
+25-04-30 14:46:19.669 - INFO: Iteration: 3900, Loss: 1.146717, Loss Init: 0.025112, Loss Denoiser: 0.022432
+25-04-30 14:46:42.258 - INFO: Iteration: 4000, Loss: 2.056427, Loss Init: 0.042163, Loss Denoiser: 0.040285
+25-04-30 15:12:04.148 - INFO: ----Validation at iteration 4000: PSNR: 25.941098 dB; SSIM: 0.786784
+
+25-04-30 15:12:04.149 - INFO: ----Validation LPIPS	: 0.278163
+
+25-04-30 15:12:04.149 - INFO: ----Validation DISTS	: 0.195914
+
+25-04-30 15:12:29.470 - INFO: Iteration: 4100, Loss: 1.214844, Loss Init: 0.025127, Loss Denoiser: 0.023794

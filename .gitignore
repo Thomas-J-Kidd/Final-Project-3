@@ -1,0 +1,4 @@
+dataset/
+Code/Denoising/results*/
+Code/Denoising/training*/
+Code/Denoising/weights*/

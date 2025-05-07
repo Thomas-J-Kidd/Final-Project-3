@@ -1,0 +1,600 @@
+25-04-28 15:09:00.662 - INFO: ----Average results for Thermal denoising validation. Iteration 1000 ----
+
+25-04-28 15:09:00.662 - INFO: ----Average PSNR	: 38.572323
+
+25-04-28 15:09:00.662 - INFO: ----Average SSIM	: 0.951875
+
+25-04-28 15:09:00.662 - INFO: ----Average LPIPS	: 0.066074
+
+25-04-28 15:09:00.662 - INFO: ----Average DISTS	: 0.105674
+
+25-04-28 15:15:12.086 - INFO: ----Average results for Thermal denoising validation. Iteration 2000 ----
+
+25-04-28 15:15:12.087 - INFO: ----Average PSNR	: 39.210410
+
+25-04-28 15:15:12.087 - INFO: ----Average SSIM	: 0.959615
+
+25-04-28 15:15:12.087 - INFO: ----Average LPIPS	: 0.038645
+
+25-04-28 15:15:12.087 - INFO: ----Average DISTS	: 0.103387
+
+25-04-28 15:21:09.242 - INFO: ----Average results for Thermal denoising validation. Iteration 3000 ----
+
+25-04-28 15:21:09.242 - INFO: ----Average PSNR	: 39.714990
+
+25-04-28 15:21:09.242 - INFO: ----Average SSIM	: 0.965309
+
+25-04-28 15:21:09.242 - INFO: ----Average LPIPS	: 0.036969
+
+25-04-28 15:21:09.242 - INFO: ----Average DISTS	: 0.077579
+
+25-04-28 15:27:23.764 - INFO: ----Average results for Thermal denoising validation. Iteration 4000 ----
+
+25-04-28 15:27:23.766 - INFO: ----Average PSNR	: 39.957748
+
+25-04-28 15:27:23.766 - INFO: ----Average SSIM	: 0.965577
+
+25-04-28 15:27:23.766 - INFO: ----Average LPIPS	: 0.035439
+
+25-04-28 15:27:23.766 - INFO: ----Average DISTS	: 0.079828
+
+25-04-28 15:33:23.379 - INFO: ----Average results for Thermal denoising validation. Iteration 5000 ----
+
+25-04-28 15:33:23.379 - INFO: ----Average PSNR	: 40.212559
+
+25-04-28 15:33:23.379 - INFO: ----Average SSIM	: 0.967768
+
+25-04-28 15:33:23.379 - INFO: ----Average LPIPS	: 0.034545
+
+25-04-28 15:33:23.379 - INFO: ----Average DISTS	: 0.072139
+
+25-04-28 15:39:13.856 - INFO: ----Average results for Thermal denoising validation. Iteration 6000 ----
+
+25-04-28 15:39:13.857 - INFO: ----Average PSNR	: 39.985092
+
+25-04-28 15:39:13.857 - INFO: ----Average SSIM	: 0.968227
+
+25-04-28 15:39:13.857 - INFO: ----Average LPIPS	: 0.032334
+
+25-04-28 15:39:13.857 - INFO: ----Average DISTS	: 0.069305
+
+25-04-28 15:45:03.687 - INFO: ----Average results for Thermal denoising validation. Iteration 7000 ----
+
+25-04-28 15:45:03.687 - INFO: ----Average PSNR	: 40.562612
+
+25-04-28 15:45:03.687 - INFO: ----Average SSIM	: 0.968909
+
+25-04-28 15:45:03.687 - INFO: ----Average LPIPS	: 0.032716
+
+25-04-28 15:45:03.687 - INFO: ----Average DISTS	: 0.066964
+
+25-04-28 15:50:54.300 - INFO: ----Average results for Thermal denoising validation. Iteration 8000 ----
+
+25-04-28 15:50:54.301 - INFO: ----Average PSNR	: 40.662862
+
+25-04-28 15:50:54.301 - INFO: ----Average SSIM	: 0.968606
+
+25-04-28 15:50:54.301 - INFO: ----Average LPIPS	: 0.031847
+
+25-04-28 15:50:54.301 - INFO: ----Average DISTS	: 0.066234
+
+25-04-28 15:56:44.669 - INFO: ----Average results for Thermal denoising validation. Iteration 9000 ----
+
+25-04-28 15:56:44.669 - INFO: ----Average PSNR	: 40.774713
+
+25-04-28 15:56:44.669 - INFO: ----Average SSIM	: 0.969932
+
+25-04-28 15:56:44.669 - INFO: ----Average LPIPS	: 0.031946
+
+25-04-28 15:56:44.669 - INFO: ----Average DISTS	: 0.065843
+
+25-04-28 16:02:35.189 - INFO: ----Average results for Thermal denoising validation. Iteration 10000 ----
+
+25-04-28 16:02:35.189 - INFO: ----Average PSNR	: 40.753813
+
+25-04-28 16:02:35.189 - INFO: ----Average SSIM	: 0.969047
+
+25-04-28 16:02:35.189 - INFO: ----Average LPIPS	: 0.030988
+
+25-04-28 16:02:35.189 - INFO: ----Average DISTS	: 0.070385
+
+25-04-28 16:08:25.294 - INFO: ----Average results for Thermal denoising validation. Iteration 11000 ----
+
+25-04-28 16:08:25.294 - INFO: ----Average PSNR	: 40.838311
+
+25-04-28 16:08:25.294 - INFO: ----Average SSIM	: 0.970191
+
+25-04-28 16:08:25.294 - INFO: ----Average LPIPS	: 0.029769
+
+25-04-28 16:08:25.294 - INFO: ----Average DISTS	: 0.060254
+
+25-04-28 16:14:15.794 - INFO: ----Average results for Thermal denoising validation. Iteration 12000 ----
+
+25-04-28 16:14:15.794 - INFO: ----Average PSNR	: 40.654390
+
+25-04-28 16:14:15.794 - INFO: ----Average SSIM	: 0.970770
+
+25-04-28 16:14:15.794 - INFO: ----Average LPIPS	: 0.028273
+
+25-04-28 16:14:15.794 - INFO: ----Average DISTS	: 0.058784
+
+25-04-28 16:20:05.676 - INFO: ----Average results for Thermal denoising validation. Iteration 13000 ----
+
+25-04-28 16:20:05.677 - INFO: ----Average PSNR	: 41.034539
+
+25-04-28 16:20:05.677 - INFO: ----Average SSIM	: 0.970911
+
+25-04-28 16:20:05.677 - INFO: ----Average LPIPS	: 0.030501
+
+25-04-28 16:20:05.677 - INFO: ----Average DISTS	: 0.062023
+
+25-04-28 16:25:55.771 - INFO: ----Average results for Thermal denoising validation. Iteration 14000 ----
+
+25-04-28 16:25:55.771 - INFO: ----Average PSNR	: 40.965201
+
+25-04-28 16:25:55.771 - INFO: ----Average SSIM	: 0.970639
+
+25-04-28 16:25:55.771 - INFO: ----Average LPIPS	: 0.031771
+
+25-04-28 16:25:55.771 - INFO: ----Average DISTS	: 0.067228
+
+25-04-28 16:31:45.805 - INFO: ----Average results for Thermal denoising validation. Iteration 15000 ----
+
+25-04-28 16:31:45.805 - INFO: ----Average PSNR	: 41.037353
+
+25-04-28 16:31:45.805 - INFO: ----Average SSIM	: 0.971148
+
+25-04-28 16:31:45.805 - INFO: ----Average LPIPS	: 0.029577
+
+25-04-28 16:31:45.805 - INFO: ----Average DISTS	: 0.059873
+
+25-04-28 16:37:36.382 - INFO: ----Average results for Thermal denoising validation. Iteration 16000 ----
+
+25-04-28 16:37:36.382 - INFO: ----Average PSNR	: 41.152403
+
+25-04-28 16:37:36.382 - INFO: ----Average SSIM	: 0.971191
+
+25-04-28 16:37:36.382 - INFO: ----Average LPIPS	: 0.031282
+
+25-04-28 16:37:36.382 - INFO: ----Average DISTS	: 0.064256
+
+25-04-28 16:43:26.822 - INFO: ----Average results for Thermal denoising validation. Iteration 17000 ----
+
+25-04-28 16:43:26.822 - INFO: ----Average PSNR	: 41.228161
+
+25-04-28 16:43:26.822 - INFO: ----Average SSIM	: 0.971639
+
+25-04-28 16:43:26.822 - INFO: ----Average LPIPS	: 0.030662
+
+25-04-28 16:43:26.822 - INFO: ----Average DISTS	: 0.062061
+
+25-04-28 16:49:16.994 - INFO: ----Average results for Thermal denoising validation. Iteration 18000 ----
+
+25-04-28 16:49:16.994 - INFO: ----Average PSNR	: 41.168568
+
+25-04-28 16:49:16.994 - INFO: ----Average SSIM	: 0.970989
+
+25-04-28 16:49:16.994 - INFO: ----Average LPIPS	: 0.031150
+
+25-04-28 16:49:16.994 - INFO: ----Average DISTS	: 0.065957
+
+25-04-28 16:55:07.024 - INFO: ----Average results for Thermal denoising validation. Iteration 19000 ----
+
+25-04-28 16:55:07.024 - INFO: ----Average PSNR	: 41.264041
+
+25-04-28 16:55:07.024 - INFO: ----Average SSIM	: 0.971717
+
+25-04-28 16:55:07.024 - INFO: ----Average LPIPS	: 0.029108
+
+25-04-28 16:55:07.024 - INFO: ----Average DISTS	: 0.059815
+
+25-04-28 17:00:57.516 - INFO: ----Average results for Thermal denoising validation. Iteration 20000 ----
+
+25-04-28 17:00:57.516 - INFO: ----Average PSNR	: 41.164244
+
+25-04-28 17:00:57.516 - INFO: ----Average SSIM	: 0.971814
+
+25-04-28 17:00:57.516 - INFO: ----Average LPIPS	: 0.028375
+
+25-04-28 17:00:57.516 - INFO: ----Average DISTS	: 0.058648
+
+25-04-28 17:06:47.712 - INFO: ----Average results for Thermal denoising validation. Iteration 21000 ----
+
+25-04-28 17:06:47.713 - INFO: ----Average PSNR	: 41.331502
+
+25-04-28 17:06:47.713 - INFO: ----Average SSIM	: 0.972094
+
+25-04-28 17:06:47.713 - INFO: ----Average LPIPS	: 0.028230
+
+25-04-28 17:06:47.713 - INFO: ----Average DISTS	: 0.058517
+
+25-04-28 17:12:38.188 - INFO: ----Average results for Thermal denoising validation. Iteration 22000 ----
+
+25-04-28 17:12:38.188 - INFO: ----Average PSNR	: 41.341393
+
+25-04-28 17:12:38.188 - INFO: ----Average SSIM	: 0.971972
+
+25-04-28 17:12:38.188 - INFO: ----Average LPIPS	: 0.028642
+
+25-04-28 17:12:38.188 - INFO: ----Average DISTS	: 0.058696
+
+25-04-28 17:18:28.760 - INFO: ----Average results for Thermal denoising validation. Iteration 23000 ----
+
+25-04-28 17:18:28.760 - INFO: ----Average PSNR	: 41.378266
+
+25-04-28 17:18:28.760 - INFO: ----Average SSIM	: 0.972165
+
+25-04-28 17:18:28.761 - INFO: ----Average LPIPS	: 0.029403
+
+25-04-28 17:18:28.761 - INFO: ----Average DISTS	: 0.060079
+
+25-04-28 17:24:19.148 - INFO: ----Average results for Thermal denoising validation. Iteration 24000 ----
+
+25-04-28 17:24:19.148 - INFO: ----Average PSNR	: 41.384889
+
+25-04-28 17:24:19.148 - INFO: ----Average SSIM	: 0.972117
+
+25-04-28 17:24:19.148 - INFO: ----Average LPIPS	: 0.029752
+
+25-04-28 17:24:19.148 - INFO: ----Average DISTS	: 0.059643
+
+25-04-28 17:30:09.437 - INFO: ----Average results for Thermal denoising validation. Iteration 25000 ----
+
+25-04-28 17:30:09.437 - INFO: ----Average PSNR	: 41.309985
+
+25-04-28 17:30:09.437 - INFO: ----Average SSIM	: 0.972002
+
+25-04-28 17:30:09.438 - INFO: ----Average LPIPS	: 0.028321
+
+25-04-28 17:30:09.438 - INFO: ----Average DISTS	: 0.057203
+
+25-04-28 17:35:59.451 - INFO: ----Average results for Thermal denoising validation. Iteration 26000 ----
+
+25-04-28 17:35:59.451 - INFO: ----Average PSNR	: 41.452503
+
+25-04-28 17:35:59.451 - INFO: ----Average SSIM	: 0.972567
+
+25-04-28 17:35:59.451 - INFO: ----Average LPIPS	: 0.027925
+
+25-04-28 17:35:59.451 - INFO: ----Average DISTS	: 0.057408
+
+25-04-28 17:41:49.895 - INFO: ----Average results for Thermal denoising validation. Iteration 27000 ----
+
+25-04-28 17:41:49.895 - INFO: ----Average PSNR	: 41.440589
+
+25-04-28 17:41:49.895 - INFO: ----Average SSIM	: 0.972373
+
+25-04-28 17:41:49.895 - INFO: ----Average LPIPS	: 0.030635
+
+25-04-28 17:41:49.895 - INFO: ----Average DISTS	: 0.061104
+
+25-04-28 17:47:39.812 - INFO: ----Average results for Thermal denoising validation. Iteration 28000 ----
+
+25-04-28 17:47:39.812 - INFO: ----Average PSNR	: 41.422618
+
+25-04-28 17:47:39.812 - INFO: ----Average SSIM	: 0.972135
+
+25-04-28 17:47:39.812 - INFO: ----Average LPIPS	: 0.028456
+
+25-04-28 17:47:39.812 - INFO: ----Average DISTS	: 0.060951
+
+25-04-28 17:53:29.805 - INFO: ----Average results for Thermal denoising validation. Iteration 29000 ----
+
+25-04-28 17:53:29.806 - INFO: ----Average PSNR	: 40.775234
+
+25-04-28 17:53:29.806 - INFO: ----Average SSIM	: 0.972087
+
+25-04-28 17:53:29.806 - INFO: ----Average LPIPS	: 0.030162
+
+25-04-28 17:53:29.806 - INFO: ----Average DISTS	: 0.061140
+
+25-04-28 17:59:19.823 - INFO: ----Average results for Thermal denoising validation. Iteration 30000 ----
+
+25-04-28 17:59:19.823 - INFO: ----Average PSNR	: 41.450674
+
+25-04-28 17:59:19.824 - INFO: ----Average SSIM	: 0.972224
+
+25-04-28 17:59:19.824 - INFO: ----Average LPIPS	: 0.028135
+
+25-04-28 17:59:19.824 - INFO: ----Average DISTS	: 0.060028
+
+25-04-28 18:05:10.110 - INFO: ----Average results for Thermal denoising validation. Iteration 31000 ----
+
+25-04-28 18:05:10.110 - INFO: ----Average PSNR	: 41.480893
+
+25-04-28 18:05:10.110 - INFO: ----Average SSIM	: 0.972543
+
+25-04-28 18:05:10.111 - INFO: ----Average LPIPS	: 0.030141
+
+25-04-28 18:05:10.111 - INFO: ----Average DISTS	: 0.061346
+
+25-04-28 18:11:02.608 - INFO: ----Average results for Thermal denoising validation. Iteration 32000 ----
+
+25-04-28 18:11:02.609 - INFO: ----Average PSNR	: 41.405636
+
+25-04-28 18:11:02.609 - INFO: ----Average SSIM	: 0.972447
+
+25-04-28 18:11:02.610 - INFO: ----Average LPIPS	: 0.028697
+
+25-04-28 18:11:02.610 - INFO: ----Average DISTS	: 0.058427
+
+25-04-28 18:17:14.482 - INFO: ----Average results for Thermal denoising validation. Iteration 33000 ----
+
+25-04-28 18:17:14.483 - INFO: ----Average PSNR	: 41.315149
+
+25-04-28 18:17:14.483 - INFO: ----Average SSIM	: 0.972241
+
+25-04-28 18:17:14.483 - INFO: ----Average LPIPS	: 0.031542
+
+25-04-28 18:17:14.483 - INFO: ----Average DISTS	: 0.063086
+
+25-04-28 18:23:26.711 - INFO: ----Average results for Thermal denoising validation. Iteration 34000 ----
+
+25-04-28 18:23:26.711 - INFO: ----Average PSNR	: 41.452220
+
+25-04-28 18:23:26.711 - INFO: ----Average SSIM	: 0.972269
+
+25-04-28 18:23:26.711 - INFO: ----Average LPIPS	: 0.029145
+
+25-04-28 18:23:26.711 - INFO: ----Average DISTS	: 0.057874
+
+25-04-28 18:29:34.152 - INFO: ----Average results for Thermal denoising validation. Iteration 35000 ----
+
+25-04-28 18:29:34.152 - INFO: ----Average PSNR	: 41.510052
+
+25-04-28 18:29:34.152 - INFO: ----Average SSIM	: 0.972637
+
+25-04-28 18:29:34.152 - INFO: ----Average LPIPS	: 0.028831
+
+25-04-28 18:29:34.152 - INFO: ----Average DISTS	: 0.058829
+
+25-04-28 18:35:46.304 - INFO: ----Average results for Thermal denoising validation. Iteration 36000 ----
+
+25-04-28 18:35:46.304 - INFO: ----Average PSNR	: 41.476962
+
+25-04-28 18:35:46.304 - INFO: ----Average SSIM	: 0.972291
+
+25-04-28 18:35:46.305 - INFO: ----Average LPIPS	: 0.030008
+
+25-04-28 18:35:46.305 - INFO: ----Average DISTS	: 0.063367
+
+25-04-28 18:41:58.599 - INFO: ----Average results for Thermal denoising validation. Iteration 37000 ----
+
+25-04-28 18:41:58.599 - INFO: ----Average PSNR	: 41.038989
+
+25-04-28 18:41:58.599 - INFO: ----Average SSIM	: 0.972564
+
+25-04-28 18:41:58.599 - INFO: ----Average LPIPS	: 0.030444
+
+25-04-28 18:41:58.599 - INFO: ----Average DISTS	: 0.061841
+
+25-04-28 18:48:18.866 - INFO: ----Average results for Thermal denoising validation. Iteration 38000 ----
+
+25-04-28 18:48:18.866 - INFO: ----Average PSNR	: 41.458296
+
+25-04-28 18:48:18.866 - INFO: ----Average SSIM	: 0.972231
+
+25-04-28 18:48:18.866 - INFO: ----Average LPIPS	: 0.028818
+
+25-04-28 18:48:18.867 - INFO: ----Average DISTS	: 0.061261
+
+25-04-28 18:54:45.873 - INFO: ----Average results for Thermal denoising validation. Iteration 39000 ----
+
+25-04-28 18:54:45.873 - INFO: ----Average PSNR	: 41.551717
+
+25-04-28 18:54:45.873 - INFO: ----Average SSIM	: 0.972684
+
+25-04-28 18:54:45.873 - INFO: ----Average LPIPS	: 0.029221
+
+25-04-28 18:54:45.873 - INFO: ----Average DISTS	: 0.059826
+
+25-04-28 19:01:08.534 - INFO: ----Average results for Thermal denoising validation. Iteration 40000 ----
+
+25-04-28 19:01:08.534 - INFO: ----Average PSNR	: 41.561621
+
+25-04-28 19:01:08.534 - INFO: ----Average SSIM	: 0.972814
+
+25-04-28 19:01:08.534 - INFO: ----Average LPIPS	: 0.029436
+
+25-04-28 19:01:08.534 - INFO: ----Average DISTS	: 0.060199
+
+25-04-28 19:07:15.462 - INFO: ----Average results for Thermal denoising validation. Iteration 41000 ----
+
+25-04-28 19:07:15.462 - INFO: ----Average PSNR	: 41.535639
+
+25-04-28 19:07:15.462 - INFO: ----Average SSIM	: 0.972591
+
+25-04-28 19:07:15.462 - INFO: ----Average LPIPS	: 0.030249
+
+25-04-28 19:07:15.462 - INFO: ----Average DISTS	: 0.061672
+
+25-04-28 19:13:08.330 - INFO: ----Average results for Thermal denoising validation. Iteration 42000 ----
+
+25-04-28 19:13:08.332 - INFO: ----Average PSNR	: 41.559566
+
+25-04-28 19:13:08.332 - INFO: ----Average SSIM	: 0.972794
+
+25-04-28 19:13:08.332 - INFO: ----Average LPIPS	: 0.028820
+
+25-04-28 19:13:08.332 - INFO: ----Average DISTS	: 0.059436
+
+25-04-28 19:19:01.350 - INFO: ----Average results for Thermal denoising validation. Iteration 43000 ----
+
+25-04-28 19:19:01.351 - INFO: ----Average PSNR	: 41.578910
+
+25-04-28 19:19:01.351 - INFO: ----Average SSIM	: 0.973081
+
+25-04-28 19:19:01.351 - INFO: ----Average LPIPS	: 0.028571
+
+25-04-28 19:19:01.351 - INFO: ----Average DISTS	: 0.057451
+
+25-04-28 19:24:54.769 - INFO: ----Average results for Thermal denoising validation. Iteration 44000 ----
+
+25-04-28 19:24:54.769 - INFO: ----Average PSNR	: 41.595852
+
+25-04-28 19:24:54.769 - INFO: ----Average SSIM	: 0.973042
+
+25-04-28 19:24:54.769 - INFO: ----Average LPIPS	: 0.029545
+
+25-04-28 19:24:54.769 - INFO: ----Average DISTS	: 0.060605
+
+25-04-28 19:30:48.337 - INFO: ----Average results for Thermal denoising validation. Iteration 45000 ----
+
+25-04-28 19:30:48.338 - INFO: ----Average PSNR	: 41.509276
+
+25-04-28 19:30:48.338 - INFO: ----Average SSIM	: 0.972853
+
+25-04-28 19:30:48.338 - INFO: ----Average LPIPS	: 0.028540
+
+25-04-28 19:30:48.338 - INFO: ----Average DISTS	: 0.058149
+
+25-04-28 19:36:41.253 - INFO: ----Average results for Thermal denoising validation. Iteration 46000 ----
+
+25-04-28 19:36:41.253 - INFO: ----Average PSNR	: 41.613425
+
+25-04-28 19:36:41.253 - INFO: ----Average SSIM	: 0.973441
+
+25-04-28 19:36:41.253 - INFO: ----Average LPIPS	: 0.028414
+
+25-04-28 19:36:41.253 - INFO: ----Average DISTS	: 0.056167
+
+25-04-28 19:42:34.705 - INFO: ----Average results for Thermal denoising validation. Iteration 47000 ----
+
+25-04-28 19:42:34.705 - INFO: ----Average PSNR	: 41.591010
+
+25-04-28 19:42:34.705 - INFO: ----Average SSIM	: 0.972952
+
+25-04-28 19:42:34.705 - INFO: ----Average LPIPS	: 0.028374
+
+25-04-28 19:42:34.705 - INFO: ----Average DISTS	: 0.058847
+
+25-04-28 19:48:27.838 - INFO: ----Average results for Thermal denoising validation. Iteration 48000 ----
+
+25-04-28 19:48:27.838 - INFO: ----Average PSNR	: 41.567874
+
+25-04-28 19:48:27.838 - INFO: ----Average SSIM	: 0.972616
+
+25-04-28 19:48:27.838 - INFO: ----Average LPIPS	: 0.030523
+
+25-04-28 19:48:27.838 - INFO: ----Average DISTS	: 0.061777
+
+25-04-28 19:54:20.688 - INFO: ----Average results for Thermal denoising validation. Iteration 49000 ----
+
+25-04-28 19:54:20.689 - INFO: ----Average PSNR	: 41.598900
+
+25-04-28 19:54:20.689 - INFO: ----Average SSIM	: 0.973030
+
+25-04-28 19:54:20.689 - INFO: ----Average LPIPS	: 0.028440
+
+25-04-28 19:54:20.689 - INFO: ----Average DISTS	: 0.059202
+
+25-04-28 20:00:13.744 - INFO: ----Average results for Thermal denoising validation. Iteration 50000 ----
+
+25-04-28 20:00:13.744 - INFO: ----Average PSNR	: 41.600741
+
+25-04-28 20:00:13.744 - INFO: ----Average SSIM	: 0.972985
+
+25-04-28 20:00:13.744 - INFO: ----Average LPIPS	: 0.027195
+
+25-04-28 20:00:13.744 - INFO: ----Average DISTS	: 0.057375
+
+25-04-28 20:06:07.091 - INFO: ----Average results for Thermal denoising validation. Iteration 51000 ----
+
+25-04-28 20:06:07.091 - INFO: ----Average PSNR	: 41.620199
+
+25-04-28 20:06:07.091 - INFO: ----Average SSIM	: 0.973116
+
+25-04-28 20:06:07.092 - INFO: ----Average LPIPS	: 0.029603
+
+25-04-28 20:06:07.092 - INFO: ----Average DISTS	: 0.058960
+
+25-04-28 20:12:00.739 - INFO: ----Average results for Thermal denoising validation. Iteration 52000 ----
+
+25-04-28 20:12:00.739 - INFO: ----Average PSNR	: 41.597891
+
+25-04-28 20:12:00.739 - INFO: ----Average SSIM	: 0.972981
+
+25-04-28 20:12:00.739 - INFO: ----Average LPIPS	: 0.028444
+
+25-04-28 20:12:00.739 - INFO: ----Average DISTS	: 0.058548
+
+25-04-28 20:17:53.563 - INFO: ----Average results for Thermal denoising validation. Iteration 53000 ----
+
+25-04-28 20:17:53.563 - INFO: ----Average PSNR	: 41.591491
+
+25-04-28 20:17:53.563 - INFO: ----Average SSIM	: 0.973168
+
+25-04-28 20:17:53.563 - INFO: ----Average LPIPS	: 0.027866
+
+25-04-28 20:17:53.563 - INFO: ----Average DISTS	: 0.058980
+
+25-04-28 20:23:47.263 - INFO: ----Average results for Thermal denoising validation. Iteration 54000 ----
+
+25-04-28 20:23:47.263 - INFO: ----Average PSNR	: 41.535639
+
+25-04-28 20:23:47.263 - INFO: ----Average SSIM	: 0.973041
+
+25-04-28 20:23:47.263 - INFO: ----Average LPIPS	: 0.029250
+
+25-04-28 20:23:47.263 - INFO: ----Average DISTS	: 0.060481
+
+25-04-28 20:29:40.644 - INFO: ----Average results for Thermal denoising validation. Iteration 55000 ----
+
+25-04-28 20:29:40.645 - INFO: ----Average PSNR	: 41.574153
+
+25-04-28 20:29:40.645 - INFO: ----Average SSIM	: 0.973088
+
+25-04-28 20:29:40.645 - INFO: ----Average LPIPS	: 0.026788
+
+25-04-28 20:29:40.645 - INFO: ----Average DISTS	: 0.056449
+
+25-04-28 20:35:34.530 - INFO: ----Average results for Thermal denoising validation. Iteration 56000 ----
+
+25-04-28 20:35:34.530 - INFO: ----Average PSNR	: 41.621667
+
+25-04-28 20:35:34.530 - INFO: ----Average SSIM	: 0.973169
+
+25-04-28 20:35:34.531 - INFO: ----Average LPIPS	: 0.028607
+
+25-04-28 20:35:34.531 - INFO: ----Average DISTS	: 0.058747
+
+25-04-28 20:41:28.145 - INFO: ----Average results for Thermal denoising validation. Iteration 57000 ----
+
+25-04-28 20:41:28.146 - INFO: ----Average PSNR	: 41.624404
+
+25-04-28 20:41:28.146 - INFO: ----Average SSIM	: 0.973062
+
+25-04-28 20:41:28.146 - INFO: ----Average LPIPS	: 0.030007
+
+25-04-28 20:41:28.146 - INFO: ----Average DISTS	: 0.062138
+
+25-04-28 20:47:21.705 - INFO: ----Average results for Thermal denoising validation. Iteration 58000 ----
+
+25-04-28 20:47:21.705 - INFO: ----Average PSNR	: 41.656578
+
+25-04-28 20:47:21.705 - INFO: ----Average SSIM	: 0.973294
+
+25-04-28 20:47:21.705 - INFO: ----Average LPIPS	: 0.027296
+
+25-04-28 20:47:21.705 - INFO: ----Average DISTS	: 0.056575
+
+25-04-28 20:53:23.755 - INFO: ----Average results for Thermal denoising validation. Iteration 59000 ----
+
+25-04-28 20:53:23.755 - INFO: ----Average PSNR	: 41.617399
+
+25-04-28 20:53:23.755 - INFO: ----Average SSIM	: 0.973096
+
+25-04-28 20:53:23.755 - INFO: ----Average LPIPS	: 0.028045
+
+25-04-28 20:53:23.755 - INFO: ----Average DISTS	: 0.057433
+
+25-04-28 20:59:22.985 - INFO: ----Average results for Thermal denoising validation. Iteration 60000 ----
+
+25-04-28 20:59:22.987 - INFO: ----Average PSNR	: 41.646326
+
+25-04-28 20:59:22.987 - INFO: ----Average SSIM	: 0.973222
+
+25-04-28 20:59:22.987 - INFO: ----Average LPIPS	: 0.029684
+
+25-04-28 20:59:22.987 - INFO: ----Average DISTS	: 0.060350
+
